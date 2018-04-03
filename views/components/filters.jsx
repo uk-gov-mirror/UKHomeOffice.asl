@@ -1,6 +1,7 @@
 const React = require('react');
 const { size } = require('lodash');
 
+const SimpleFilters = require('./simple-filters');
 const FilterColumn = require('./filter-column');
 const ScreenOnly = require('../helpers/screen-only');
 
@@ -42,4 +43,4 @@ const Filters = ({
   );
 };
 
-module.exports = ScreenOnly(Filters);
+module.exports = ScreenOnly(Filters, SimpleFilters);
