@@ -14,11 +14,11 @@ const SimpleFilters = ({
             return null;
           }
           const filterSettings = filters.find(f => f.key === key);
-          return <div className='filter-group'>
+          return <div className='filter-group' key={ key }>
             <h3>{ filterSettings.title }</h3>
             <ul>
               {
-                filter.map(value => <li>{ filterSettings.label ? filterSettings.label(value) : value }</li>)
+                filter.map((value, index) => <li key={ index }>{ filterSettings.label ? filterSettings.label(value) : value }</li>)
               }
             </ul>
           </div>
