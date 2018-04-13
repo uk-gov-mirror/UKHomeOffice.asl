@@ -1,6 +1,6 @@
-const React = require('react');
+import React from 'react';
 
-const Breadcrumb = ({
+export const Breadcrumb = ({
   crumb
 }) => typeof crumb === 'string'
   ? <li>{crumb}</li>
@@ -17,16 +17,17 @@ const Breadcrumbs = ({
     return null;
   }
   crumbs = [ { label: 'Home', href: '/' }, ...crumbs ];
-  return <div className="breadcrumb">
-    <ol>
-      {
-        crumbs.map((crumb, index) =>
-          <Breadcrumb key={index} crumb={crumb} />
-        )
-      }
-    </ol>
-  </div>;
+  return (
+    <div className="breadcrumb">
+      <ol>
+        {
+          crumbs.map((crumb, index) =>
+            <Breadcrumb key={index} crumb={crumb} />
+          )
+        }
+      </ol>
+    </div>
+  );
 };
 
-Breadcrumbs.Breadcrumb = Breadcrumb;
-module.exports = Breadcrumbs;
+export default Breadcrumbs;

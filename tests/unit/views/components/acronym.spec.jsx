@@ -1,7 +1,7 @@
-const React = require('react');
-const { render } = require('enzyme');
-const Acronym = require('views/components/acronym');
-const dictionary = require('@asl/dictionary');
+import React from 'react';
+import { render } from 'enzyme';
+import Acronym from 'views/components/acronym';
+import dictionary from '@asl/dictionary';
 
 describe('<Acronym />', () => {
   Object.keys(dictionary).forEach(key => {

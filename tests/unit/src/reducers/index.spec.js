@@ -1,4 +1,4 @@
-const rootReducer = require('src/reducers');
+import rootReducer from 'src/reducers';
 
 describe('Root Reducer', () => {
   test('creates the expected initial state', () => {

@@ -1,6 +1,6 @@
-const React = require('react');
-const CheckboxGroup = require('govuk-react-components/components/forms/radio-group');
-const MoreLink = require('./more-link');
+import React from 'react';
+import CheckboxGroup from 'govuk-react-components/components/forms/radio-group';
+import MoreLink from './more-link';
 
 class FilterColumn extends React.Component {
   componentDidMount() {
@@ -50,4 +50,4 @@ class FilterColumn extends React.Component {
   }
 }
 
-module.exports = FilterColumn;
+export default FilterColumn;

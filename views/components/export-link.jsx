@@ -10,4 +10,4 @@ const ExportLink = ({
   </p>
 );
 
-module.exports = ExportLink;
+export default ExportLink;

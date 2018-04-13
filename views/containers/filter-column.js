@@ -1,12 +1,12 @@
-const { connect } = require('react-redux');
-const FilterColumn = require('../components/filter-column');
-const { toggleFilter } = require('../../src/actions/filters');
+import { connect } from 'react-redux';
+import FilterColumn from '../components/filter-column';
+import { toggleFilter } from '../../src/actions/filters';
 
 const mapStateToProps = (state, { filter: { key } }) => ({
   filterBy: state.filters.filterBy[key]
 });
 
-module.exports = connect(
+export default connect(
   mapStateToProps,
   { toggleFilter }
 )(FilterColumn);

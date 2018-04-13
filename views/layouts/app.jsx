@@ -1,6 +1,6 @@
-const React = require('react');
-const { Provider } = require('react-redux');
-const Layout = require('./default');
+import React from 'react';
+import { Provider } from 'react-redux';
+import Layout from './default';
 
 const App = ({
   store,
@@ -19,4 +19,4 @@ const App = ({
   </Provider>
 );
 
-module.exports = App;
+export default App;

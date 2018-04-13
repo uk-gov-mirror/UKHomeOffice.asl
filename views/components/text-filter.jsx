@@ -1,5 +1,5 @@
-const React = require('react');
-const Input = require('govuk-react-components/components/forms/input-text');
+import React from 'react';
+import Input from 'govuk-react-components/components/forms/input-text';
 
 const TextFilter = ({
   setTextFilter,
@@ -15,4 +15,4 @@ const TextFilter = ({
   </div>
 );
 
-module.exports = TextFilter;
+export default TextFilter;

@@ -1,5 +1,5 @@
-const React = require('react');
-const { map, merge, pickBy, get } = require('lodash');
+import React from 'react';
+import { map, merge, pickBy, get } from 'lodash';
 
 const TableHeader = ({
   id,
@@ -73,4 +73,4 @@ const ListTable = ({
   );
 };
 
-module.exports = ListTable;
+export default ListTable;

@@ -1,5 +1,5 @@
-const React = require('react');
-const FilterColumn = require('../containers/filter-column');
+import React from 'react';
+import FilterColumn from '../containers/filter-column';
 
 const Filters = ({
   filters,
@@ -32,4 +32,4 @@ const Filters = ({
   );
 };
 
-module.exports = Filters;
+export default Filters;

@@ -1,4 +1,4 @@
-const React = require('react');
+import React from 'react';
 
 const dictionary = require('@asl/dictionary');
 
@@ -10,4 +10,4 @@ const Acronym = ({
     : children
 );
 
-module.exports = Acronym;
+export default Acronym;

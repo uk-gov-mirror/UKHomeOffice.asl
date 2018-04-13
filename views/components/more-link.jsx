@@ -1,4 +1,4 @@
-const React = require('react');
+import React from 'react';
 
 const MoreLink = ({
   handleClick,
@@ -17,4 +17,4 @@ const MoreLink = ({
   </p>
 );
 
-module.exports = MoreLink;
+export default MoreLink;

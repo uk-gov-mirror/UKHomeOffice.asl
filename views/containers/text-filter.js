@@ -1,12 +1,12 @@
-const { connect } = require('react-redux');
-const { setTextFilter } = require('../../src/actions');
-const TextFilter = require('../components/text-filter');
+import { connect } from 'react-redux';
+import { setTextFilter } from '../../src/actions';
+import TextFilter from '../components/text-filter';
 
 const mapStateToProps = state => ({
   textFilter: state.list.filter
 });
 
-module.exports = connect(
+export default connect(
   mapStateToProps,
   { setTextFilter }
 )(TextFilter);

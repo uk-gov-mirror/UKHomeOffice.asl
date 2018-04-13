@@ -1,4 +1,4 @@
-const React = require('react');
+import React from 'react';
 
 const Api = ({
   url,
@@ -22,4 +22,4 @@ const Api = ({
   </details>
 );
 
-module.exports = Api;
+export default Api;

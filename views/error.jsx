@@ -1,17 +1,18 @@
-const React = require('react');
-const App = require('./layouts/app');
+import React from 'react';
+import App from './layouts/app';
 
-class Index extends React.Component {
-  render() {
-    return (
-      <App {...this.props}>
-        <h1 className="heading-large">{this.props.error.message}</h1>
-        <pre>
-          {this.props.error.stack}
-        </pre>
-      </App>
-    );
+const ErrorPage = ({
+  error: {
+    message,
+    stack
   }
-}
+}) => (
+  <App>
+    <h1 className="heading-large">{message}</h1>
+    <pre>
+      {stack}
+    </pre>
+  </App>
+);
 
-module.exports = Index;
+export default ErrorPage;

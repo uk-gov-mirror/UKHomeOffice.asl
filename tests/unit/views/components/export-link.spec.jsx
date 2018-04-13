@@ -1,6 +1,6 @@
-const React = require('react');
-const { shallow } = require('enzyme');
-const ExportLink = require('views/components/export-link');
+import React from 'react';
+import { shallow } from 'enzyme';
+import ExportLink from 'views/components/export-link';
 
 describe('<ExportLink />', () => {
 

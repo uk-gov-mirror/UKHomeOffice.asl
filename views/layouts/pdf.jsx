@@ -1,4 +1,4 @@
-const React = require('react');
+import React from 'react';
 
 const Pdf = ({
   hostname,
@@ -17,4 +17,4 @@ const Pdf = ({
   </html>
 );
 
-module.exports = Pdf;
+export default Pdf;

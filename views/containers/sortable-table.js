@@ -1,13 +1,13 @@
-const { connect } = require('react-redux');
-const ListTable = require('../components/list-table');
-const { setSortColumn } = require('../../src/actions');
+import { connect } from 'react-redux';
+import ListTable from '../components/list-table';
+import { setSortColumn } from '../../src/actions';
 
 const mapStateToProps = ({ list: { sort: { column, ascending } } }) => ({
   column,
   ascending
 });
 
-module.exports = connect(
+export default connect(
   mapStateToProps,
   { setSortColumn }
 )(ListTable);

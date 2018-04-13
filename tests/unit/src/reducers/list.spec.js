@@ -1,5 +1,5 @@
-const reducer = require('src/reducers/list');
-const schema = require('src/schema').places;
+import reducer from 'src/reducers/list';
+import { places as schema } from 'src/schema';
 
 const all = [
   {

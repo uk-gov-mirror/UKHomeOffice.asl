@@ -1,4 +1,4 @@
-const React = require('react');
+import React from 'react';
 
 const Join = ({
   separator = ', ',
@@ -10,4 +10,4 @@ const Join = ({
   return list.concat(item);
 }, []);
 
-module.exports = Join;
+export default Join;
