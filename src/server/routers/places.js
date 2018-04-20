@@ -1,33 +1,14 @@
 const { Router } = require('express');
-const Busboy = require('busboy');
-const csv = require('csv-parse');
 
 const actions = require('../../actions');
 const Tables = require('../../schema');
 
 const api = require('../middleware/api');
 const list = require('../middleware/list');
+const parse = require('../middleware/parse-csv');
 
 const diff = require('../lib/diff/places');
 
-const parse = () => {
-  return (req, res, next) => {
-    if (req.method !== 'POST') {
-      return next();
-    }
-    req.records = [];
-    const busboy = new Busboy({ headers: req.headers })
-      .on('file', (fieldname, file, filename, encoding, mimetype) => {
-        if (mimetype !== 'text/csv') {
-          return file.resume();
-        }
-        file.pipe(csv({ columns: true })).on('data', row => req.records.push(row));
-      })
-      .on('finish', () => next())
-      .on('error', next);
-    req.pipe(busboy);
-  };
-};
 
 module.exports = () => {
 
