@@ -2,7 +2,7 @@ const actions = require('../../actions');
 
 const format = (url, params) => {
   return url.split('/').map(segment => segment.substr(0, 1) === ':' ? params[segment.substr(1)] : segment).join('/');
-}
+};
 
 module.exports = (url) => {
   return (req, res, next) => {

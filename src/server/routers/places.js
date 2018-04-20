@@ -52,7 +52,7 @@ module.exports = () => {
   router.post('/update', parse(), (req, res, next) => {
     Promise.resolve()
       .then(() => {
-          return diff(res.data, req.records);
+        return diff(res.data, req.records);
       })
       .then(diff => {
         req.session.changes = req.session.changes || {};
