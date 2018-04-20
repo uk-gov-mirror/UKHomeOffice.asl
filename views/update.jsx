@@ -23,7 +23,7 @@ class Update extends React.Component {
     >
       <h2 className="headline">{name}</h2>
       <h1>Update licensed premises</h1>
-
+      { changeset.length && <h3>Showing { changeset.length } updated record(s)</h3> }
       { changeset.map((record) => <Diff { ...record } key={ record.id } />) }
 
       <form method="post" action="" encType="multipart/form-data">
