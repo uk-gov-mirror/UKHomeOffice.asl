@@ -33,7 +33,7 @@ module.exports = () => {
 
   const router = Router();
 
-  router.get('/', api());
+  router.use(api('/places'));
 
   router.get('/', list({ schema: Tables.places }));
 
@@ -52,10 +52,7 @@ module.exports = () => {
   router.post('/update', parse(), (req, res, next) => {
     Promise.resolve()
       .then(() => {
-        const url = `/establishment/${req.user.get('establishment')}/places`;
-        return req.api(url)
-          .then(response => response.json.data)
-          .then(places => diff(places, req.records));
+          return diff(res.data, req.records);
       })
       .then(diff => {
         req.session.changes = req.session.changes || {};
