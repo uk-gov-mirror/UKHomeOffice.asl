@@ -9,12 +9,11 @@ module.exports = () => {
 
   const router = Router();
 
-  router.get('/', api('/roles'));
-
-  router.get('/', list({ schema: Tables.roles }));
+  router.get('/', api('/profiles'), list({ schema: Tables.roles }));
 
   router.get('/', (req, res, next) => {
     res.template = 'roles';
+    res.pdfTemplate = 'pdf/roles';
     next();
   });
 

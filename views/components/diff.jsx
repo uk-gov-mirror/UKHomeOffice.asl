@@ -30,18 +30,15 @@ const DiffTable = ({
   existing,
   changes
 }) => (
-  <React.Fragment>
-    <table className="diff">
-      {
-        Object.keys(existing).map(key => {
-          return <tr key={key}>
-            <th>{ key }</th>
-            <td><Diff before={existing[key]} after={changes[key]} /></td>
-          </tr>;
-        })
-      }
-    </table>
-  </React.Fragment>
+  <tr>
+    {
+      Object.keys(existing).map(key => {
+        return <td key={key}>
+          <Diff before={existing[key]} after={changes[key]} />
+        </td>;
+      })
+    }
+  </tr>
 );
 
 module.exports = DiffTable;

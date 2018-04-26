@@ -11,8 +11,8 @@ export const formatters = {
   suitability: { format: joinAcronyms },
   holding: { format: joinAcronyms },
   nacwo: {
-    format: (name, nacwo) => nacwo
-      ? <a href={`/profile/${nacwo.profile.id}`}>{ name }</a>
+    format: (name, row) => row.nacwo
+      ? <a href={`/profile/${row.nacwo.profile.id}`}>{ name }</a>
       : '-',
     title: () => <Acronym>NACWO</Acronym>
   }

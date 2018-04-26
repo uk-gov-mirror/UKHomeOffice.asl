@@ -62,7 +62,7 @@ const ListTable = ({
               {
                 map(columns, ({ format, accessor }, key) => {
                   const datum = accessor ? get(row, accessor) : row[key];
-                  return <td key={key}>{ format ? format(datum, row[key]) : datum }</td>;
+                  return <td key={key}>{ format ? format(datum, row) : datum }</td>;
                 })
               }
             </tr>

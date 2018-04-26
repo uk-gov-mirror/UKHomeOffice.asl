@@ -5,12 +5,27 @@ import FilterTable from './components/filter-table';
 import dictionary from '@asl/dictionary';
 
 export const formatters = {
-  type: {
-    format: role => dictionary[role] || dictionary[role.toUpperCase()] || role,
+  firstName: {
+    title: () => 'First name',
+    searchable: true
+  },
+  lastName: {
+    title: () => 'Surname',
+    searchable: true
+  },
+  roles: {
+    format: roles => {
+      return roles
+        .map(role => dictionary[role] || dictionary[role.toUpperCase()] || role)
+        .join(', ')
+    },
     title: () => 'Role'
   },
-  places: { format: places => places || '-' },
-  profile: { format: id => <a href={`/profile/${id}`}>View</a> }
+  profile: {
+    format: (_, row) => <a href={`/profile/${row.id}`}>View</a>,
+    title: () => 'Profile',
+    sortable: false
+  }
 };
 
 const Roles = ({

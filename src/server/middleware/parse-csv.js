@@ -12,9 +12,16 @@ module.exports = () => {
         if (mimetype !== 'text/csv') {
           return file.resume();
         }
-        file.pipe(csv({ columns: true })).on('data', row => req.records.push(row));
+        req.stream = file
+          .pipe(csv({ columns: true }))
+          .on('data', row => req.records.push(row));
       })
-      .on('finish', () => next())
+      .on('finish', () => {
+        if (req.stream) {
+          return req.stream.on('finish', () => next());
+        }
+        next();
+      })
       .on('error', next);
     req.pipe(busboy);
   };

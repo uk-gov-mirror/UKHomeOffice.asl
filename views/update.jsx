@@ -24,8 +24,22 @@ class Update extends React.Component {
       <h2 className="headline">{name}</h2>
       <h1>Update licensed premises</h1>
 
-      { changeset.length && <h3>Showing { changeset.length } updated record(s)</h3> }
-      { changeset.map((record) => <Diff { ...record } key={ record.id } />) }
+      { changeset.length ? <h3>Showing { changeset.length } updated record(s)</h3> : null }
+      {
+        changeset.length ? <table className="diff">
+          <thead>
+            <tr>
+              { Object.keys(changeset[0].existing).map(key => <th key={ key }>{ key }</th>) }
+            </tr>
+          </thead>
+          <tbody>
+            {
+              changeset.map(record => <Diff { ...record } key={ record.id } />)
+            }
+          </tbody>
+        </table> : null
+      }
+
 
       <form method="post" action="" encType="multipart/form-data">
         <Input type="file" name="csv" label="Select a file" />

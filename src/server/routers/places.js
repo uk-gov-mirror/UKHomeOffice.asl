@@ -25,7 +25,7 @@ module.exports = () => {
   });
 
   router.get('/update', (req, res, next) => {
-    res.store.dispatch(actions.setChangeset(Object.values(req.session.changes)));
+    res.store.dispatch(actions.setChangeset(Object.values(req.session.changes || {})));
     res.template = 'update';
     next();
   });

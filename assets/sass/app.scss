@@ -49,9 +49,6 @@ table {
 th {
   white-space: nowrap;
 }
-th:first-child, th:nth-child(2), th:nth-child(3) {
-  width:20%;
-}
 
 .control-bar {
   > * {
@@ -63,7 +60,7 @@ th:first-child, th:nth-child(2), th:nth-child(3) {
 table.diff {
   margin-bottom: $gutter;
   .before, .after {
-    margin: 0 2px;
+    display: inline-block;
   }
   .before {
     background: rgba(255, 0, 0, 0.2);

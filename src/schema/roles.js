@@ -1,20 +1,16 @@
 module.exports = {
   id: {},
-  name: {
-    show: true,
-    accessor: 'profile.name'
-  },
-  type: {
-    show: true
-  },
-  places: {
-    show: true,
-    accessor: 'places.length'
-  },
-  profile: {
-    show: true,
-    searchable: false,
-    sortable: false,
-    accessor: 'profile.id'
-  }
+  title: {},
+  firstName: { show: true },
+  lastName: { show: true },
+  roles: { show: true },
+  dob: {},
+  position: {},
+  qualifications: {},
+  certifications: {},
+  address: {},
+  postcode: {},
+  email: {},
+  telephone: {},
+  notes: {}
 };
