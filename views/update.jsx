@@ -19,7 +19,6 @@ class Update extends React.Component {
     return <App
       store={store}
       crumbs={[{ label: 'Licensed premises', href: '/places' }, 'Update']}
-      scripts={['/public/js/pages/update.js']}
     >
       <h2 className="headline">{name}</h2>
       <h1>Update licensed premises</h1>
@@ -30,6 +29,7 @@ class Update extends React.Component {
           <thead>
             <tr>
               { Object.keys(changeset[0].existing).map(key => <th key={ key }>{ key }</th>) }
+              <th/>
             </tr>
           </thead>
           <tbody>

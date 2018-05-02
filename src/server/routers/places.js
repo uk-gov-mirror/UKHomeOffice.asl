@@ -45,6 +45,15 @@ module.exports = () => {
       .catch(next);
   });
 
+  router.post('/update/:changeid', parse(), (req, res, next) => {
+    Promise.resolve()
+      .then(() => {
+        delete req.session.changes[req.params.changeid];
+      })
+      .then(() => res.redirect(req.baseUrl + '/update'))
+      .catch(next);
+  });
+
   return router;
 
 };

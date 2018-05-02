@@ -28,9 +28,10 @@ const Diff = ({
 
 const DiffTable = ({
   existing,
-  changes
-}) => (
-  <tr>
+  changes,
+  id
+}) => {
+  return <tr>
     {
       Object.keys(existing).map(key => {
         return <td key={key}>
@@ -38,7 +39,12 @@ const DiffTable = ({
         </td>;
       })
     }
+    <td>
+      <form action={`/places/update/${id}`} method="post">
+        <button type="submit" className="button">Remove</button>
+      </form>
+    </td>
   </tr>
-);
+};
 
 module.exports = DiffTable;
