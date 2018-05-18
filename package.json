@@ -22,13 +22,13 @@
   },
   "homepage": "https://github.com/UKHomeOffice/asl#readme",
   "dependencies": {
-    "@asl/service": "^2.0.0"
+    "@asl/service": "^2.0.1"
   },
   "devDependencies": {
     "@ukhomeoffice/asl-functional-testing": "^1.1.0",
     "dotenv": "^5.0.1",
     "eslint": "^4.15.0",
-    "eslint-config-lennym": "^2.0.0",
+    "eslint-config-lennym": "^2.0.1",
     "funkie": "0.0.6",
     "funkie-chromedriver": "0.0.1",
     "nodemon": "^1.17.4"
